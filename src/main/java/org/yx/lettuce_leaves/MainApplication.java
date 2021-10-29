@@ -1,8 +1,11 @@
 package org.yx.lettuce_leaves;
 
 import javafx.application.Application;
+import javafx.application.ConditionalFeature;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
@@ -21,10 +24,17 @@ public class MainApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("index-view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 800, 400);
         Scene scene = new Scene(fxmlLoader.load());
+        scene.setFill(Color.BLACK);
         stage.setTitle("LETTUCE-LEAVES");
         stage.initStyle(StageStyle.UNIFIED);
+        if (Platform.isSupported(ConditionalFeature.UNIFIED_WINDOW)) {
+            log.info("支持UNIFIED_WINDOW");
+        } else {
+            log.warn("不支持UNIFIED_WINDOW");
+        }
+
         stage.setScene(scene);
-        stage.setOpacity(0.85);
+//        stage.setOpacity(0.85);
         stage.show();
         stage.setOnCloseRequest(windowEvent -> {
             if (ConfirmUtil.confirm("要退出lettuce-leaves吗")) {

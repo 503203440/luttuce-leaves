@@ -13,7 +13,7 @@ import java.util.Optional;
  * @date 2021/10/27
  */
 @Slf4j
-public class MainController {
+public class IndexController {
 
 
     @FXML
