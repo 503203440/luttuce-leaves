@@ -1,0 +1,5 @@
+/*菜单样式*/
+.menu {
+    -fx-font-size: 12px;
+    -fx-font-family: "JetBrains Mono", serif;
+}

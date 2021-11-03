@@ -24,9 +24,9 @@ public class MainApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("index-view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 800, 400);
         Scene scene = new Scene(fxmlLoader.load());
-        scene.setFill(Color.BLACK);
+//        scene.setFill(Color.BLACK);
         stage.setTitle("LETTUCE-LEAVES");
-        stage.initStyle(StageStyle.UNIFIED);
+//        stage.initStyle(StageStyle.UNIFIED);
         if (Platform.isSupported(ConditionalFeature.UNIFIED_WINDOW)) {
             log.info("支持UNIFIED_WINDOW");
         } else {
@@ -36,6 +36,8 @@ public class MainApplication extends Application {
         stage.setScene(scene);
 //        stage.setOpacity(0.85);
         stage.show();
+//        stage.setFullScreen(true);
+        stage.setMaximized(true);
         stage.setOnCloseRequest(windowEvent -> {
             if (ConfirmUtil.confirm("要退出lettuce-leaves吗")) {
                 log.info("用户退出，windowEvent:{}", windowEvent.getEventType().getName());
