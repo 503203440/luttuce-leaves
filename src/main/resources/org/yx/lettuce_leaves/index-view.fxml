@@ -3,18 +3,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane style="-fx-pref-width: 600; -fx-pref-height: 400;-fx-background-color: #8c60dc"
+<AnchorPane style="-fx-pref-width: 600; -fx-pref-height: 400;-fx-background-color: azure"
             xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.yx.lettuce_leaves.IndexController" stylesheets="@style.css">
     <MenuBar layoutX="-1.0" layoutY="1.0" opacity="0.82" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
              AnchorPane.topAnchor="0.0"
              styleClass="menu">
         <Menu mnemonicParsing="false" text="连接" styleClass="menu">
-            <MenuItem mnemonicParsing="false" text="新建连接" styleClass="menu" />
+            <MenuItem id="newConnect" onAction="#newConnect" mnemonicParsing="false" text="新建连接" styleClass="menu" />
             <MenuItem mnemonicParsing="false" text="关闭" styleClass="menu"/>
         </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="About"/>
+        <Menu mnemonicParsing="false" text="帮助">
+            <MenuItem mnemonicParsing="false" text="关于" onAction="#about"/>
         </Menu>
     </MenuBar>
 </AnchorPane>
